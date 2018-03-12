@@ -1,0 +1,233 @@
+@import "https://fonts.googleapis.com/css?family=Roboto:500:700";
+
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    font-weight: medium;  
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    background: #fafafa;
+}
+
+
+.main-background {
+    background-color: gold; 
+    padding-top: 5px; 
+    padding-bottom: 5px;
+}
+
+.main {
+    padding: 0;
+} 
+
+.navbar { 
+    padding-top:0px;
+    padding-bottom:0px;  
+    background-color: green; 
+}
+
+#main-nav {
+    display: flex; 
+    justify-content: flex-start; 
+}
+
+.dropdown-toggle::after {
+    display:none
+}
+
+/* adds some margin below the link sets  */
+.navbar .dropdown-menu div[class*="col"] { 
+    margin-top: 2.5rem;
+    margin-bottom:.5rem; 
+}  
+
+.navbar .dropdown-menu div[class*="container"] {
+    margin-left: .9rem;
+}
+
+.navbar .dropdown-menu {
+    border:none;
+    background-color:#F0F0F0!important;
+} 
+
+/* ---------------------------------------------------
+   MAIN-NAV STYLE
+----------------------------------------------------- */   
+@media screen and (min-width: 1080px) { 
+
+    span {
+        color: green;
+    }
+
+    /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
+    .navbar .nav-item {
+        padding: .5rem .5rem; 
+        margin: 0 .25rem;   
+    }   
+
+    #main-nav > .nav-item { 
+        flex-grow: 1; 
+        flex-basis: 1%; 
+        margin-left: .1rem; 
+        margin-right: .1rem; 
+        text-align: center; 
+    }
+
+    #main-nav > .nav-item:hover  {
+        background-color: gold; 
+    } 
+
+    #navbarDropdown { 
+        margin-top: .5rem; 
+        margin-bottom: .5rem; 
+        color: white;
+    }    
+
+    .navbar .nav-item:hover #navbarDropdown {color: green}
+
+    /* makes the dropdown full width  */
+    .navbar .dropdown {position:static;}
+
+    .navbar .dropdown-menu {
+        width:100%;
+        left:0;
+        right:0;
+        /*  height of nav-item  */
+        top:60px;
+    }
+    
+    /* shows the dropdown menu on hover */
+    .navbar .dropdown:hover .dropdown-menu, .navbar .dropdown .dropdown-menu:hover {
+        display:block!important;
+    }
+    
+    .navbar .dropdown-menu {
+        border: none;
+        background-color: #fff; 
+    }  
+
+ 
+  .col-lg-6 {
+      padding-left: 0px;
+  }
+
+   ul ul .nav-item {
+       padding-left: 0px;
+   } 
+
+   ul ul .nav-link {
+        color: green; 
+        padding-left: 0px;  
+        
+        border-bottom: 1px solid darkgray;
+    } 
+
+    #sidebarCollapse {
+        display: none;
+    }
+
+    .wrapper {
+        display: none;
+    } 
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES - SideBar
+----------------------------------------------------- */ 
+@media (max-width: 1080px) {   
+    
+
+    #main-nav { 
+        display: none;
+    } 
+
+    #sidebarCollapse { 
+        display: block;  
+        padding: .4rem .4rem; 
+        margin: 0 .25rem;  
+        margin-left: 94%; 
+    }    
+    
+    a:hover {
+        text-decoration: none;
+    }
+
+    .wrapper {
+        display: flex; 
+        flex-direction: row-reverse;
+        align-items: stretch; 
+        height:100vh;
+    }
+    
+    #sidebar {   
+        margin-right: -250px;
+        min-width: 250px;
+        max-width: 250px;
+        background: green;
+        color: #fff;
+        transition: all 0.3s;
+    }
+    
+    #sidebar.active { 
+        margin-right: 0px;
+    }
+    
+    #sidebar ul.components {
+        padding: 20px 0;
+    }
+    
+    #sidebar ul p {
+        color: #fff;
+        padding: 10px;
+    }  
+
+    #sidebar ul ul {
+        background-color: darkgreen;
+    } 
+    
+    #sidebar ul li a {
+        padding: 10px;
+        font-size: 1.1em;
+        display: block; 
+        color: whitesmoke; 
+    } 
+    
+    a[data-toggle="collapse"] {
+        position: relative;
+    }
+    
+    a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+        content: '\f078';
+        display: block;
+        position: absolute;
+        right: 20px;
+        font-family: 'FontAwesome';
+        font-size: 0.6em;
+    }
+    a[aria-expanded="true"]::before {
+        content: '\f077';
+    }
+    
+    
+    ul ul a {
+        font-size: 0.9em !important;
+        padding-left: 10px !important;
+    } 
+
+    ul ul span {
+        padding-left: 10px !important;
+    }
+    
+    ul.CTAs {
+        padding: 20px;
+    }
+    
+    ul.CTAs a {
+        text-align: center;
+        font-size: 0.9em !important;
+        display: block;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+}
